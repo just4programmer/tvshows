@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shows</title>
+</head>
+
+<body>
+    <h1>Channel Shows</h1>
+    <div class="container">
+        <div class="slideshow-container">
+
+            <div class="mySlides">
+                <h2 id="title"></h2>
+                <iframe id="link" title="Iframe Example"></iframe>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="buttons">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    let channels = [
+        {
+            title: 'Star Gold',
+            link: "https://tvwiz.in/app/app/channelBrowse/339",
+        },
+        {
+            title: 'Sony Max HD',
+            link: "https://tvwiz.in/app/app/channelBrowse/332",
+        },
+        {
+            title: 'Zee Cinema',
+            link: "https://tvwiz.in/app/app/channelBrowse/423",
+        },
+        {
+            title: 'Zee Cinema HD',
+            link: "https://tvwiz.in/app/app/channelBrowse/424",
+        },
+        {
+            title: '&Pictures HD',
+            link: "https://tvwiz.in/app/app/channelBrowse/280",
+        },
+        {
+            title: 'Sony Wah',
+            link: "https://tvwiz.in/app/app/channelBrowse/4050042",
+        },
+        {
+            title: 'Sony Sab HD',
+            link: "https://tvwiz.in/app/app/channelBrowse/8944984",
+        },
+        {
+            title: 'Sony',
+            link: "https://tvwiz.in/app/app/channelBrowse/327",
+        },
+    ]
+
+    let slideIndex = 0;
+    showSlides( slideIndex )
+
+    function plusSlides( n )
+    {
+        slideIndex += n;
+        showSlides( slideIndex );
+    }
+
+
+    function showSlides( n )
+    {
+        let iframe = document.getElementById( "link" );
+        let title = document.getElementById( "title" )
+        if ( n > channels.length - 1 ) { slideIndex = 0 }
+        if ( n < 0 ) { slideIndex = channels.length - 1 }
+        iframe.src = channels[ slideIndex ].link;
+        title.innerHTML = slideIndex + 1 + '. ' + channels[ slideIndex ].title;
+    }
+
+</script>
+
+</html>
