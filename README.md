@@ -1,2 +1,2 @@
 # tvshows
-A website to display currently streaming tv shows on various channels.
+A website to display currently streaming TV shows on various channels.
